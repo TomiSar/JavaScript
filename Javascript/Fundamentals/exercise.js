@@ -1,11 +1,56 @@
-//console.log('\nJavaScript fundamentals')
-console.log('\nJavaScript funcamentals');
+//console.log('\nJavaScript funcamentals');
+console.log()
 //Forms
 //Data access using HTTP
 //Promises and error handling
 //Programming the BOM and DOM
 //Classes and modules
 //6. Objects and Arrays
+
+//Aray iterration
+
+//JSON JavaScript object notation
+
+//Expanding Objects using Prototypes
+//String.Prototype
+// String.prototype.hello = function () {
+//     return this.toString() + 'Hello';
+// }
+
+// console.log('' .hello() +  ' World!!')
+
+//Prototypes
+// function Car(id) {
+//     this.carId = id;
+// }
+
+// Car.prototype.start = function () {
+//     console.log('Starting ' + this.carId)
+// }
+
+// let car = new Car(456);
+// car.start(); //Start 456
+
+//Constuctor functions
+// function Car(id) {
+//     this.carId = id;
+
+//     this.start = function() {
+//         console.log('Start: ' + this.carId)
+//     }
+// }
+
+// let car = new Car(131313);
+// car.start();
+
+// function Car(id) {
+//     this.id = id;
+//     let newCar = 'Mercedes-Benz'
+// }
+
+// let car = new Car(123)
+// console.log(car.id)
+
 //5. Functions and scopes
 //Default parameters
 // let carId = 'Porsche'
