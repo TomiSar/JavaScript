@@ -1,15 +1,152 @@
-//console.log('\nJavaScript funcamentals');
 console.log()
 //Forms
-//Data access using HTTP
-//Promises and error handling
-//Programming the BOM and DOM
-//Classes and modules
-//6. Objects and Arrays
+//10. Data access using HTTP
+//9. Promises and error handling
+//8. Programming the BOM and DOM
 
-//Aray iterration
+//Modifying DOM elements
+// let element = document.getElementById('first');
+// element.style.color = 'blue';
+// element.textContent = 'New content...';
+// element.setAttribute('foo', 'fooValue');
+//console.log(element);;
+
+//Selecting DOM elements
+// let els = document.getElementsByTagName('p');
+// console.log(els[0])
+// let els = document.getElementsByClassName('p1');
+// console.log(els[1]);
+// let el = document.getElementById('first');
+// console.log(el.id);
+
+//The document Object
+//document Object
+//Properties    Methods                 Events
+//body          createElement()         onload
+//forms         createEvent()           onload
+//links         getElementById()        onkeypress
+//pathname      getElementByClassName()
+//search        
+
+//The location Object
+// console.log(document.location.href)
+// console.log(location.href)
+
+//location Object
+//Properties    Methods     Events
+//href          assign()     (not common)    
+//hostname      reload()
+//port          
+//pathname
+//search
+
+//Timers
+//funtion timeout after 5 seconds is passed
+// let intervalId = setInterval(function () {
+//     var date = new Date();
+//     console.log('2 seconds passed');
+// }, 2000)
+
+//if need to cancel
+//clearInterval(intervalId);
+
+// let timeoutId = setTimeout( function() {
+//     console.log('5 seconds passed');
+// }, 5000)
+// clearTimeout(timeoutId); //clear
+
+//The window object
+//year = 1965;
+//console.log(window.innerWidth); //400
+
+//window Object
+//console.log(window.innerWidth)
+
+//Properties    Methods     Events
+//document      alert()     (not common)    
+//location      back()
+//console       confirm()
+//innerWeight
+//innerWidth
+//pageXOffset
+//pageYOffset
+
+//7. Classes and modules
+//Importing a module
+//Creating a module 
+//Inheritance --> index.js
+//Methods --> index.js
+//Constuctor and properties --> index.js
+//Class basics              --> index.js
+
+//6. Objects and Arrays
+//Array iterration
+// let carIds = [
+//     { carId: 123, style: 'sedan' }, 
+//     { carId: 456, style: 'convertible' }, 
+//     { carId: 789, style: 'sedan' }
+// ];
+
+// let car = carIds.find(
+//    car => car.carId > 400
+// )
+// console.log(car)
+
+// carIds.forEach(car => console.log(car) );
+// carIds.forEach(
+//     (car, index) => console.log(car , index)
+// )
+
+//if carId is greater than 500 
+// let car = carIds.find(
+//     car => car.carId > 500
+// )
+// console.log(car)
+
+//if carId is greater than 0 return true
+// let result = carIds.every(
+//     car => car.carId > 0
+// )
+// console.log(result)
+
+//log out convertible cars --> [ { carId: 456, style: 'convertible' } ]
+// let convertibles = carIds.filter(
+//     car => car.style === 'convertible'
+// );
+// console.log(convertibles)
+
+//Log out cars and car indexes
+// carIds.forEach(car => console.log(car) );
+// carIds.forEach((car, index) => console.log(car, index))
 
 //JSON JavaScript object notation
+// let jsonIn =
+// `
+//     [
+//         {"carId" : 123},
+//         {"carId" : 456},
+//         {"carId" : 789}
+//     ]
+// `;
+
+// let carIds = JSON.parse(jsonIn)
+// console.log( carIds )
+// console.log(carIds[0])
+
+// let carIds = [
+//     { carId: 123 }, 
+//     { carId: 456 }, 
+//     { carId: 789 }
+// ];
+// console.log( JSON.stringify(carIds) )
+
+// let car = {
+//     id: 213,
+//     style: 'Convertible'
+// }
+
+// console.log( JSON.stringify(car) )
+// console.log('Car id:' + JSON.stringify(car.id) + ' , style:' + JSON.stringify(car.style) )
 
 //Expanding Objects using Prototypes
 //String.Prototype
