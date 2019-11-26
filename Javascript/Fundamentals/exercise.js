@@ -1,3 +1,4 @@
+import $ from 'jquery';
 //console.log('\nJavaScript fundamentals')
 console.log()
 //11. Forms
@@ -9,7 +10,26 @@ console.log()
 
 //10. Data access using HTTP
 //HTTP POST using jQuery
+let user = {
+    name: 'Tomi Sarjamo',
+    avatar: 'tomi.jpg'  
+};
+
+let promise = $.post("http://myuid.mockapi.io/api/v1/users", user);
+
+promise.then(
+    data = console.log('data: ', data),
+    error => console.log('error: ', error)
+)
+
 //HTTP request using JQuery
+// let promise = $.get('http://myuid.mockapi.io/api/v1/users/');
+// promise.then(
+//     data => console.log('success: ', data),
+//     error => console.log('error: ', error)
+// );
+
+
 //HTTP request using XHR
 //let xhttp = new XMLHttpRequest();
 // var xhttp = new XMLHttpRequest();
