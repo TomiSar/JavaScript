@@ -1,9 +1,88 @@
+//console.log('\nJavaScript fundamentals')
 console.log()
-//Forms
-//10. Data access using HTTP
-//9. Promises and error handling
-//8. Programming the BOM and DOM
+//11. Forms
 
+//Preventing Form submission
+//Accessing from fields
+//Showing validation errors
+//Posting from JavaScript
+
+//10. Data access using HTTP
+//HTTP POST using jQuery
+//HTTP request using JQuery
+//HTTP request using XHR
+//let xhttp = new XMLHttpRequest();
+// var xhttp = new XMLHttpRequest();
+// xhttp.onreadystatechange = function() {
+//     if (this.readyState == 4 && this.status == 200) {
+//         console.log(this.responseText);
+//     }
+// }
+
+// xhttp.open("GET", "http://myid.mocakapi.io/api/v1/users", true);
+// xhttp.send();
+
+//9. Promises and error handling
+//Setting a promise
+// let promise = new Promise(
+//     function (resolve, reject) {
+//         //setTimeout(resolve, 1000, 'someValue');
+//         setTimeout(reject, 1000, 'someValue');
+//     }
+// );
+
+//after 1000 milliseconds log fulfilled or rejected
+// promise.then(
+//     value => console.log('fulfilled: ' + value),
+//     error => console.log('rejected: ' + error)
+// );
+
+//Creating a promise
+// let promise = new Promise(
+//     function (resolve, reject) {
+//         setTimeout(resolve, 2000, 'someValue');
+//         //setTimeout(reject, 100, 'someValue')
+//     }
+// );
+// console.log(promise) //Promise { <pending> }
+
+//Developer defined Errors
+// try {
+//     //code here
+//     throw new Error('My defined error!');
+
+// } catch (error) {
+//     console.log('error: ', error)
+// }
+// finally {
+//     console.log('always execute this because of override')
+// }
+
+//finally
+// try {
+//     let car = newCar;
+// } catch (error) {
+//     console.log('error: ', error)
+// }
+// finally {
+//     console.log('always execute this because of override')
+// }
+
+//Error Handling using try and catch
+// try {
+//     let car = newCar;
+// } catch (error) {
+//     console.log('error: ', error)   
+// }
+
+// console.log('continuing...')
+
+//Errors in JavaScript
+// let car = newCar;
+// console.log('continuing...')
+
+
+//8. Programming the BOM and DOM
 //Modifying DOM elements
 // let element = document.getElementById('first');
 // element.style.color = 'blue';
