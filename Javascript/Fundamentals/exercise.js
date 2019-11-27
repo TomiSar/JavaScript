@@ -1,8 +1,79 @@
 //console.log('\nJavaScript fundamentals')
 console.log()
 
+//Building your application for Production 
+//Cross-site Scripting XXS
+//Chrome developer tools and security --> Network ctrl-r, app.js Sources
+//https://javascriptobfuscator.com/
+
+//11. Forms C:\Users\sarjatom\Repos\Pluralsight\JavaScript\Javascript\Fundamentals\webpack-starter\src --> npm start  localhost:8080
+//Posting from JavaScript
+// import $ from 'jquery';
+// let form = document.getElementById('user-form');
+
+// form.addEventListener('submit', event => {
+
+//     let user = form.elements['user'];
+//     let avatarFile = form.elements['avatar-file'];
+
+//     let posting = {
+//         user : user.value,
+//         avatarFile : avatarFile.value
+//     };
+
+//     //a2fc7385fca92411cc3e
+//     let promise = $.post(
+//         "http://5b32a4fd82407e001413f1df.mockcapi.io/api/users", posting
+//     );
+
+//     promise.then(
+//         data => console.log('Success: ', data),
+//         error => console.log('Error: ', error)
+//     );
+
+//     event.preventDefault();
+// });
+
+//Showing validation errors
+// let form = document.getElementById('user-form');
+// form.addEventListener('submit', event => {
+//     let user = form.elements['user'];
+//     let userError = document.getElementById('user-error');
+
+//     //name must be at least four characters
+//     if (user.value.length < 4) {
+//         userError.textContent = 'Invalid entry';
+//         userError.style.color = 'red';
+//         user.style.borderColor = 'red';
+//         user.focus();
+
+//         event.preventDefault();
+//     }
+// });
+
+//Accessing from fields
+// let form = document.getElementById('user-form');
+
+// form.addEventListener('submit',event => {
+//     //inputs
+//     let user = form.elements['user'];
+//     let avatarFile = form.elements['avatar-file'];
+
+//     console.log(`User name : ${user.value}`);
+//     console.log(`Avatar file : ${avatarFile.value}.jpg`);
+//     event.preventDefault();
+// });
+
+//Preventing Form submission
+// let form = document.getElementById('user-form');
+
+// form.addEventListener('submit', event => {
+//     //prevent browser from submitting the form
+//     event.preventDefault();
+
+// });
+
 //10. Data access using HTTP
-//import $ from 'jquery';
 //HTTP POST using jQuery
 // let user = {
 //     name: 'Tomi Sarjamo',
@@ -14,7 +85,7 @@ console.log()
 // promise.then(
 //     data = console.log('data: ', data),
 //     error => console.log('error: ', error)
-// )
+// );
 
 //HTTP request using JQuery
 // let promise = $.get('http://myuid.mockapi.io/api/v1/users/');
@@ -24,17 +95,28 @@ console.log()
 // );
 
 
-//HTTP request using XHR
+//HTTP request using XHR https://www.mockapi.io/signup
 //let xhttp = new XMLHttpRequest();
 // var xhttp = new XMLHttpRequest();
 // xhttp.onreadystatechange = function() {
 //     if (this.readyState == 4 && this.status == 200) {
 //         console.log(this.responseText);
 //     }
-// }
+// };
 
 // xhttp.open("GET", "http://myid.mocakapi.io/api/v1/users", true);
 // xhttp.send();
+
+//import $ from 'jquery';
+//import '../styles/index.scss';
+
+// let promise = $.get('http://myuid.mockapi.io/api/v1/users/');
+// promise.then(
+//     data => console.log('success: ', data),
+//     error => console.log('error: ', error)
+// );
+
+//console.log('webpack starterkit');
 
 //9. Promises and error handling
 //Setting a promise
