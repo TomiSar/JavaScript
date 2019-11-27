@@ -1,11 +1,5 @@
 //console.log('\nJavaScript fundamentals')
 console.log()
-//11. Forms
-//Posting from JavaScript
-//Showing validation errors
-//Accessing from fields
-//Preventing Form submission
-
 
 //10. Data access using HTTP
 //import $ from 'jquery';
