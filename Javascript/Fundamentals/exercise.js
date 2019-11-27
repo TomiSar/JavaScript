@@ -1,26 +1,26 @@
-import $ from 'jquery';
 //console.log('\nJavaScript fundamentals')
 console.log()
 //11. Forms
-
-//Preventing Form submission
-//Accessing from fields
-//Showing validation errors
 //Posting from JavaScript
+//Showing validation errors
+//Accessing from fields
+//Preventing Form submission
+
 
 //10. Data access using HTTP
+//import $ from 'jquery';
 //HTTP POST using jQuery
-let user = {
-    name: 'Tomi Sarjamo',
-    avatar: 'tomi.jpg'  
-};
+// let user = {
+//     name: 'Tomi Sarjamo',
+//     avatar: 'tomi.jpg'  
+// };
 
-let promise = $.post("http://myuid.mockapi.io/api/v1/users", user);
+// let promise = $.post("http://myuid.mockapi.io/api/v1/users", user);
 
-promise.then(
-    data = console.log('data: ', data),
-    error => console.log('error: ', error)
-)
+// promise.then(
+//     data = console.log('data: ', data),
+//     error => console.log('error: ', error)
+// )
 
 //HTTP request using JQuery
 // let promise = $.get('http://myuid.mockapi.io/api/v1/users/');
