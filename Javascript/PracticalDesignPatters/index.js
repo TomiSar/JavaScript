@@ -1,34 +1,38 @@
 //Practical design patters in JavaScript -- Jonathan Mills
 
 //6. Behavioral design patters
-//Behavioral
-//1. Command
-//2. Mediator
-//3. Observor
 //console.log('Behavioral design patterns')
+//Behavioral patterns includes : 
+//1. Command 2. Mediator 3. Observor
 
 //5. Structural design patters
-//Structural
-//1. Decorator
-//2. Facade
-//3. Flyweight
+//Structural patterns includes : 1. Decorator 2. Facade 3. Flyweight
 //console.log('5. Structural design patterns')
 
 //4. Creational Design patters
-//Creational
-//1. Constructor
-//2. Module
-//3. Factory
-//4. Singleton
 //console.log('4. Creational design patterns')
+//Creational patters includes : 1. Constructor 2. Module 3. Factory 4. Singleton
+//Demo: Constructor node 
+//Constructor node
+//Demo: Prototypes
+//Prototypes
+//Demo: Constuctor pattern
+//Constuctor pattern
+function ObjectName(parameter1, parameter2) {
+    this.parameter1 = parameter1;
+    this.parameter2 = parameter2;
+
+    this.toString = function () {
+        return this.parameter1 + ' ' + this.parameter2;
+    }
+}
+
+var object = Object.create();
 
 //3. Objects in JavaScript
-console.log('\n3. Objects in JavaScript')
-
-
+//console.log('\n3. Objects in JavaScript')
 //Demo: Inheritance
 //Object.create for inheritance
-
 
 //Demo: Define property
 //Define property (for Object)
@@ -81,14 +85,4 @@ console.log('\n3. Objects in JavaScript')
 //The gang of four
 //Physical design patters
 //Design pattens to rescue
-//The problem
-
-//Introduction
-// var Task = function(name) {
-//     this.name = name;
-//     this.completed = false;
-
-//     this.completed = function() {
-
-//     }
-// } 
+//The problem 
