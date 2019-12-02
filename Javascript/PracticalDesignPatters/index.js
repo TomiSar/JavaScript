@@ -14,20 +14,32 @@
 //Creational patters includes : 1. Constructor 2. Module 3. Factory 4. Singleton
 //Demo: Constructor node 
 //Constructor node
-//Demo: Prototypes
+//Demo: Prototypes in EcmaScript
+'use strict';
+
+
 //Prototypes
+// function ObjectName(parameter1, parameter2) {
+//     this.parameter1 = parameter1;
+//     this.parameter2 = parameter2;
+
+//     this.toString = function() {
+//         return this.parameter1 + ' ' + this.parameter2;
+//     }
+// }
+
 //Demo: Constuctor pattern
 //Constuctor pattern
-function ObjectName(parameter1, parameter2) {
-    this.parameter1 = parameter1;
-    this.parameter2 = parameter2;
+// function ObjectName(parameter1, parameter2) {
+//     this.parameter1 = parameter1;
+//     this.parameter2 = parameter2;
 
-    this.toString = function () {
-        return this.parameter1 + ' ' + this.parameter2;
-    }
-}
+//     this.toString = function () {
+//         return this.parameter1 + ' ' + this.parameter2;
+//     }
+// }
 
-var object = Object.create();
+// var object = Object.create();
 
 //3. Objects in JavaScript
 //console.log('\n3. Objects in JavaScript')
