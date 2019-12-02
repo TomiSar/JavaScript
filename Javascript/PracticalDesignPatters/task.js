@@ -10,7 +10,7 @@
 
         Task.prototype.complete = function () {
             console.log('completing task: ' + this.name);
-            this.complete = true;
+            this.completed = true;
             this.save();
         };
 

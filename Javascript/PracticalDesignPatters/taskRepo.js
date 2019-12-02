@@ -6,26 +6,26 @@
         var calltimes = 0;
         var db = {};
 
-        //return task id
         var get = function (id) {
             calltimes++;
-            console.log('Getting task' + id + ' called ' + calltimes + ' times.')
+            console.log('Getting task ' + id + ' called ' + calltimes + ' times.');
             return {
                 name: 'task ' + id
             }
         }
 
-        //save task
         var save = function (task) {
             calltimes++;
-            console.log('Saving task ' + task.name + ' to the database ' + calltimes + ' times.')
+            console.log('Saving ' + task.name + ' to the db' + calltimes + ' times.');
         }
+
 
         return {
             get: get,
             save: save
         }
-    }
 
+    }
     app.service('TaskRepository', taskRepo);
+
 }())
