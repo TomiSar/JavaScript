@@ -9,15 +9,27 @@
 //Structural patterns includes : 1. Decorator 2. Facade 3. Flyweight
 //console.log('5. Structural design patterns')
 
-//4. Creational Design patters
+//4. Creational Design patters plunkr http://plnkr.co/edit/LQepAH?p=info (Design pattern demo)
 //console.log('4. Creational design patterns')
 //Creational patters includes : 1. Constructor 2. Module 3. Factory 4. Singleton
-//Demo: Constructor node 
+//Module pattern
+var module = function () {
+    var privateVar = 'Private variable';
+
+    return {
+        method: function() {
+
+        },
+        nextMethod: function() {
+
+        }
+    }
+}
+
+//DEMO: Constructor Angular
+//Demo: Constructor node
 //Constructor node
-//Demo: Prototypes in EcmaScript
-'use strict';
-
-
+//Demo: Prototypes
 //Prototypes
 // function ObjectName(parameter1, parameter2) {
 //     this.parameter1 = parameter1;
