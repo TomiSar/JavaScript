@@ -12,20 +12,45 @@
 //4. Creational Design patters plunkr http://plnkr.co/edit/LQepAH?p=info (Design pattern demo)
 //console.log('4. Creational design patterns')
 //Creational patters includes : 1. Constructor 2. Module 3. Factory 4. Singleton
-//Module pattern
 
-var module = function () {
-    var privateVar = 'Private variable';
+//Singleton pattern
+var TaskRepo = (function () {
+    var taskRepo;
+    function createRepo() {
+        var taskRepo = new Object("Task");
+        return taskRepo;
+    }
 
     return {
-        method: function () {
-            console.log('First method returns this');
-        },
-        nextMethod: function () {
-            console.log('Next method returns this');
+        getInstance: function () {
+            if (!taskRepo) {
+                taskRepo = createRepo();
+            }
+            return taskRepo;
         }
     }
+})();
+
+var repo1 = TaskRepo.getInstance();
+var repo2 = TaskRepo.getInstance();
+
+if (repo1 === repo2) {
+    console.log('\nTask repositories are the same')
 }
+
+//Module pattern
+// var module = function () {
+//     var privateVar = 'Private variable';
+
+//     return {
+//         method: function () {
+//             console.log('First method returns this');
+//         },
+//         nextMethod: function () {
+//             console.log('Next method returns this');
+//         }
+//     }
+// }
 
 //DEMO: Constructor Angular
 //Demo: Constructor node
