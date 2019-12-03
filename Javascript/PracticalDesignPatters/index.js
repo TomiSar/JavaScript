@@ -13,15 +13,16 @@
 //console.log('4. Creational design patterns')
 //Creational patters includes : 1. Constructor 2. Module 3. Factory 4. Singleton
 //Module pattern
+
 var module = function () {
     var privateVar = 'Private variable';
 
     return {
-        method: function() {
-
+        method: function () {
+            console.log('First method returns this');
         },
-        nextMethod: function() {
-
+        nextMethod: function () {
+            console.log('Next method returns this');
         }
     }
 }

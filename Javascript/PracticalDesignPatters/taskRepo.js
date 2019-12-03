@@ -13,12 +13,11 @@
                 name: 'task ' + id
             }
         }
-
+        
         var save = function (task) {
             calltimes++;
-            console.log('Saving ' + task.name + ' to the db' + calltimes + ' times.');
+            console.log('Saving ' + task.name + ' to the db called ' + calltimes + ' times.');
         }
-
 
         return {
             get: get,
