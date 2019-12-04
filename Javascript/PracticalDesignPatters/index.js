@@ -5,38 +5,54 @@
 //Behavioral patterns includes : 
 //1. Command 2. Mediator 3. Observor
 
+//DEMO : Setting up the environment
+//Observer pattern 
+
+
 //5. Structural design patters
 //Structural patterns includes : 1. Decorator 2. Facade 3. Flyweight
 //console.log('5. Structural design patterns')
+
+//DEMO : Flyweight
+//Flyweight
+//DEMO : Facade angular
+//DEMO: Facade node
+//Facade pattern 
+//DEMO: Decorating services
+//DEMO: Decorating objects in array
+//DEMO: More complicated Decorator 
+//DEMO: Simple Decorator
+//Decorator pattern
+
 
 //4. Creational Design patters plunkr http://plnkr.co/edit/LQepAH?p=info (Design pattern demo)
 //console.log('4. Creational design patterns')
 //Creational patters includes : 1. Constructor 2. Module 3. Factory 4. Singleton
 
 //Singleton pattern
-var TaskRepo = (function () {
-    var taskRepo;
-    function createRepo() {
-        var taskRepo = new Object("Task");
-        return taskRepo;
-    }
+// var TaskRepo = (function () {
+//     var taskRepo;
+//     function createRepo() {
+//         var taskRepo = new Object("Task");
+//         return taskRepo;
+//     }
 
-    return {
-        getInstance: function () {
-            if (!taskRepo) {
-                taskRepo = createRepo();
-            }
-            return taskRepo;
-        }
-    }
-})();
+//     return {
+//         getInstance: function () {
+//             if (!taskRepo) {
+//                 taskRepo = createRepo();
+//             }
+//             return taskRepo;
+//         }
+//     }
+// })();
 
-var repo1 = TaskRepo.getInstance();
-var repo2 = TaskRepo.getInstance();
+// var repo1 = TaskRepo.getInstance();
+// var repo2 = TaskRepo.getInstance();
 
-if (repo1 === repo2) {
-    console.log('\nTask repositories are the same')
-}
+// if (repo1 === repo2) {
+//     console.log('\nTask repositories are the same')
+// }
 
 //Module pattern
 // var module = function () {
