@@ -16,7 +16,7 @@
 //Flyweight
 //DEMO : Facade angular
 //DEMO: Facade node
-//Facade pattern 
+//Facade pattern Used to provide a simplified interface to a complicated system 
 //DEMO: Decorating services
 //DEMO: Decorating objects in Angular http://plnkr.co/edit/LQepAH?p=preview
 //DEMO: More complicated Decorator 
