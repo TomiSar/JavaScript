@@ -4,33 +4,31 @@ var Task = function (name) {
 }
 
 Task.prototype.complete = function () {
-    console.log('completing task: ' + this.name);
+    console.log('Completing task: ' + this.name);
     this.completed = true;
 };
 
 Task.prototype.save = function () {
-    console.log('saving task: ' + this.name);
+    console.log('Saving task: ' + this.name);
 }
 
-Task.prototype.notify = function() {
-    console.log('Notifying important people')
-}
-
+console.log() //empty line before task is completed and saved
 var myTask = new Task('Legacy task');
-console.log() //log an empty line before task is completed and saved
-myTask.notify();
 myTask.complete();
 myTask.save();
 
 var urgentTask = new Task('Urgent task');
-//taskName(urgentTask.name)
 urgentTask.priority = 2;
 urgentTask.notify = function () {
     console.log('Notifying important people')
 }
 
-urgentTask.notify();
 urgentTask.complete();
+urgentTask.save = function () {
+    this.notify();
+    Task.prototype.save.call(this)
+}
+
 urgentTask.save();
 
 // function taskName(name) {

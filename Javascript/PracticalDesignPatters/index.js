@@ -8,7 +8,6 @@
 //DEMO : Setting up the environment
 //Observer pattern 
 
-
 //5. Structural design patters
 //Structural patterns includes : 1. Decorator 2. Facade 3. Flyweight
 //console.log('5. Structural design patterns')
@@ -19,11 +18,10 @@
 //DEMO: Facade node
 //Facade pattern 
 //DEMO: Decorating services
-//DEMO: Decorating objects in array
+//DEMO: Decorating objects in Angular http://plnkr.co/edit/LQepAH?p=preview
 //DEMO: More complicated Decorator 
 //DEMO: Simple Decorator
 //Decorator pattern
-
 
 //4. Creational Design patters plunkr http://plnkr.co/edit/LQepAH?p=info (Design pattern demo)
 //console.log('4. Creational design patterns')
