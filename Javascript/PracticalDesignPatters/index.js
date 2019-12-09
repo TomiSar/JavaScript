@@ -2,11 +2,17 @@
 
 //6. Behavioral design patters
 //console.log('Behavioral design patterns')
-//Behavioral patterns includes : 
+//Behavioral patterns includes :
 //1. Command 2. Mediator 3. Observor
 
+//DEMO: Command pattern
+//DEMO: Mediator pattern
+//DEMO: Removing Observers
+//DEMO: Adding our Subject
+//DEMO: Creating our Observer List
+//DEMO: Creating our Observers
 //DEMO : Setting up the environment
-//Observer pattern 
+//Observer pattern
 
 //5. Structural design patters
 //Structural patterns includes : 1. Decorator 2. Facade 3. Flyweight
