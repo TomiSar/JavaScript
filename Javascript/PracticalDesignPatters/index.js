@@ -6,6 +6,12 @@
 //1. Command 2. Mediator 3. Observor
 
 //DEMO: Command pattern
+//Command pattern Fully decouples the execution from the implementation
+//Allows less fragile implementations
+//Support undo operations
+//Support auditing and logging operations
+
+//Fully decouples 
 //DEMO: Mediator pattern
 //DEMO: Removing Observers
 //DEMO: Adding our Subject
