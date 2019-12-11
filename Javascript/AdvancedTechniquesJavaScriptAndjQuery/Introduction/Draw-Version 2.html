@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+    <head><title>Draw - version 2 (two parameters)</title></head>
+    <style>
+        #theCanvas {background-image: -moz-radial-gradient(30px, 30px, #FFF, #EEF); }
+    </style>
+    <body>
+        <canvas id='theCanvas' width="640" height="480" >
+            Attention!! Your browser does not support canvas 
+        </canvas>
+    </body>
+    <script>
+    _KSM =
+    {   draw: function(left, top) //two parameters left and top position in draw function()
+        {   //Draw something on Canvas
+            var canvas = document.getElementById('theCanvas');
+            if (canvas.getContext) 
+            {   var context = canvas.getContext('2d');
+                context.strokeStyle = 'black';
+                context.fillStyle = 'silver';
+                context.fillRect(left, top, 100, 100) //parameters --> left, top
+                context.strokeRect(left, top, 100, 100);
+            }
+        }
+    } 
+    _KSM.draw(); //Legacy code
+    //New code
+    _KSM.draw(530, 370);
+    </script>
+
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+    
+    <head><title>Draw - version 3 (four parameters)</title></head>
+    <style>
+        #theCanvas {background-image: -moz-radial-gradient(30px, 30px, #FFF, #EEF); }
+    </style>
+    <body>
+        <canvas id='theCanvas' width="640" height="480">
+            Attention!! Your browser does not support canvas 
+        </canvas>
+    </body>
+    <script>
+    _KSM =
+    //four parameters left, top, width height position in draw function() position and size included
+    {   draw: function(left, top, width, height)
+        {   //Draw something on Canvas
+            var canvas = document.getElementById('theCanvas');
+            if (canvas.getContext) 
+            {   var context = canvas.getContext('2d');
+                context.strokeStyle = 'black';
+                context.fillStyle = 'silver';
+                //parameters --> left, top, width, height
+                context.fillRect(left, top, width, height)
+                context.strokeRect(left, top, width, height);
+            }
+        }
+    } 
+    _KSM.draw(); //Legacy code
+    _KSM.draw(530, 370); //two parameters
+    _KSM.draw(100, 100, 280, 280) //four parameters
+    </script>
+
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+    
+    <head><title>Draw - version 5 (Stub functions)</title></head>
+    <style>
+        #theCanvas {background-image: -moz-radial-gradient(30px, 30px, #FFF, #EEF); }
+    </style>
+    <body>
+        <canvas id='theCanvas' width="640" height="480">
+            Attention!! Your browser does not support canvas 
+        </canvas>
+    </body>
+    <script>
+    //six left, top, width height position in draw() (function) position, size, stroke an fill included
+    //the stroke color and fill color are now passed through parameters
+    //The draw() (function) requires all parameters in the proper order and with proper values
+    //Function Stubs
+    //1. Rename original function
+    //2. Create new Stub function
+    //3. Legacy code calls stub
+    //4. New code calls new function name
+    _KSM =
+    {   draw: function(left, top, width, height, stroke, fill)
+        { _KSM.drawNew(left, top, width, height, 'black', 'silver');
+        },
+        drawNew: function(left, top, width, height, stroke, fill)
+        {   //Draw something on Canvas
+            var canvas = document.getElementById('theCanvas');
+            if (canvas.getContext) 
+            {   var context = canvas.getContext('2d');
+                context.strokeStyle = stroke;
+                context.fillStyle = fill;
+                context.fillRect(left, top, width, height) //parameters --> left, top, width, height
+                context.strokeRect(left, top, width, height);
+            }
+        }
+    }
+    //Legacy code
+    _KSM.draw();
+    _KSM.draw(530, 370);
+    _KSM.draw(100, 100, 440, 280);
+
+    //Latest code
+    _KSM.drawNew(120, 120, 400, 240, 'burlywood', 'lemonchiffon');
+    </script>
+
+</html>
