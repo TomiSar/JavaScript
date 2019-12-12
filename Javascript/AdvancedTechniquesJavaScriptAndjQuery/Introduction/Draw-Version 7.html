@@ -14,8 +14,9 @@
     //six left, top, width height position in draw() (function) position, size, stroke an fill included
     //the stroke color and fill color are now passed through parameters
     //The draw() (function) requires all parameters in the proper order and with proper values
-    //Default values
-    //** Provide defaults within the function when parameters are missing **//
+    //All Default values
+    //** Provide defaults for remaining parameters **//
+    // Define All defaults for left, top, width, height, fill, stroke
     //-- Useful when one or two parameters are optional
     //-- Optional parameters should be at the end of the parameter list
     //-- If more than one parameter is optional, certain assumptions must be made if only one is supplied
@@ -25,7 +26,6 @@
             var canvas = document.getElementById('theCanvas');
             if (canvas.getContext)
             {   var context = canvas.getContext('2d');
-                //All defaults left, top, width, height, fill, stroke
                 if (typeof left === 'undefined')
                     left = 10;
                 if (typeof top === 'undefined')
@@ -48,14 +48,15 @@
 
     //Legacy code
     _KSM.draw();
-    _KSM.draw(530, 170);
+    _KSM.draw(530, 370);
     _KSM.draw(100, 100, 440, 280);
     _KSM.draw(120, 120, 400, 240, 'burlywood', 'lemonchiffon');
     _KSM.draw(530, 10, 100, 100, 'red', 'teal');
-    _KSM.draw(10, 310, 160, 160, 'red'); //Default values
+    _KSM.draw(10, 310, 160, 160, 'red');
 
-    //Latest code change
-    _KSM.draw(270, undefined, undefined, undefined, undefined, 'green'); //All defaults
+    //Latest code
+    //Problems with readability
+    _KSM.draw(270, undefined, undefined, undefined, undefined, 'green');
     </script>
 
 </html>

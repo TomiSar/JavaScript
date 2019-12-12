@@ -34,9 +34,9 @@
 //Outline
 
 //1. Introduction
-//Default values in an object --> Draw-Version 9.html
-//Legacy support with object --> Draw-Version 8.html
-//Changing to an object parameter value --> Draw-Version 7.html
+//Default values in an object --> Draw-Version 10.html
+//Legacy support with object --> Draw-Version 9.html
+//Changing to an object parameter value --> Draw-Version 8.html
 //All default values --> Draw-Version 7.html
 //Default parameters --> Draw-Version 6.html
 //Stub functions --> Draw-Version 5.html
