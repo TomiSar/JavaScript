@@ -31,7 +31,19 @@
 //More elements
 //Message function
 //Shorthand methods
+//**Handling standard events**//
+//--Usually use an anonymous function 
+//--For common events, shorthand methods can be used 
+//----- .blur() .change() .click(), .dbclick(), .focus(), focusin(), focusout()
+//----- .hover() .keydown() .keypress(), .keyup(), .load()
+//----- .mousedown() .mouseenter() .mouseleave(), .mousemove(), .mouseout(), mouseover(), mouseup()
+
 //Outline
+//**jQuery Event Handling**//
+//-Create a simple web page for demonstration
+//-Attach event handlers using shorthand methods
+//-Propagation
+//-Browser differences
 
 //1. Introduction
 //Default values in an object --> Draw-Version 10.html
