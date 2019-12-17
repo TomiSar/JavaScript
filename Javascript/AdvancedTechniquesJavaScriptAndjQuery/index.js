@@ -26,11 +26,63 @@
 //Outline
 
 //2. Event handling
+//*Summary*//
+//-- Shorthand methods ultimately reference the .on() method
+//-- Events bubble ut the DOM from innermost elements
+//-- .bind(), .live() and .on() are othe ways to attach events
+//-- .on() ifs preferred attachment method
+
 //No shorthand
-//Propagation
-//More elements
-//Message function
-//Shorthand methods
+//*Events handlers without shorthand methods()*//
+//-- .bind(), .unbind(), .live(), .die(), .delegate(), .undelegate(), .on(), .off(), .one()
+// .bind('click', function(event)
+// {   //Process click event
+// })
+// .unbind('click')
+// .live('click', function(event)
+// {   //Process click event
+// })
+// .die('click')
+// .delegate('selector', 'click', function(event)
+// {   //Process click event
+// })
+// .undelegate('selector', 'click', function(event)
+// {   //Process click event
+// })
+// .on('click', function(event)         // .on('click', 'selector', function(event)             
+// {   //Process click event            // {   //Process click event
+// })                                   // })
+// .off('click')
+// .one('click', function(event)
+// {    //Process click event
+// })
+
+//Propagation Events-4.html
+//*Events bubble up the DOM until handled*//
+//*Ways to cancel event processing*//
+//-- Return false from event handler 
+//-- Call preventDefault() on the event
+//-- Call stopPropagation() on the event
+//-- Call stopImmediatePropagation() on the event
+
+//*Mltiple Handlers can be attached for the same event*//
+//*jQuery provides methods to determine if the state of the event has been changed*//
+//-- .isPropagationStoppped() 
+//-- .isImmediatePropagationStoppped()
+//-- .isDefaultPrevented()
+
+//More elements Events-3.html
+//-- Add clickable to more elements 
+//-- Add more event handlers
+//-- Predenting default behaviour
+//-- Internet explorer id different
+
+//Message function Events-2.html
+//--Centralize message hanling
+//--Use an object parameter
+//--Explicity set what "this" referenences
+//Shorthand methods Events-1.html
+
 //**Handling standard events**//
 //--Usually use an anonymous function 
 //--For common events, shorthand methods can be used 
