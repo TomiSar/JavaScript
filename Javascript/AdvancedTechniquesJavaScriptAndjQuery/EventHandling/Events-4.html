@@ -64,7 +64,7 @@
                 .mousedown(function(event) //additional mousedown event handler to illustrate
                 {   if (!event.isPropagationStopped() &&
                         !event.isImmediatePropagationStopped() &&
-                        !evenet.isDefaultPrevented())
+                        !event.isDefaultPrevented())
                     {   showEventMessage.call(this, { eventType: event.type,
                                                       suffix: '#2<br/>' });
                     }

@@ -22,8 +22,20 @@
 //Delegation
 //Namespace
 //Named functions
-//Event handler Methods
-//Outline
+//*Event handler Methods*//
+//Using jQuery Event Handlers
+//-- Change shorthand methods to use .on() method
+//-- Consolidate event handler functions
+//-- Pay attention when using .off() method 
+//*Outline*//
+//Advanced jQuery Event handling
+//-- Attaching events without shorthand methods
+//-- Named function
+//-- Event Namespaces
+//-- Delegation
+//-- Custom events
+//-- Passing event parameters
+//Introduction
 
 //2. Event handling
 //*Summary*//
