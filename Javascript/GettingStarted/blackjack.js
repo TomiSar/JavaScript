@@ -3,11 +3,26 @@
 //Calculating score
 //Taking a Card or staying
 
-//Card variables (Contains all cards in deck) 
+//Card variables (Contains all cards in deck includimg cards for all suits)
 let suits = ['Hearts', 'Clubs', 'Diamonds', 'Spades'];
-let values = ['Ace', 'King', 'Queen', 'Jack',
-    'Ten', 'Nine', 'Eight', 'Seven', 'Six',
-    'Five', 'Four', 'Three', 'Two'];
+let values = ['Ace', 'Two', 'Three', 'Four', 'Five',
+              'Six', 'Seven', 'Eight', 'Nine', 'Ten',
+              'Jack', 'Queen', 'King'];
+
+//#region printing all the cards for console           
+//Print all cards
+// console.log('\nPrint all card values from deck');
+// for (let i = 0; i < suits.length; i++) {
+//     for (let j = 0; j < values.length; j++) {
+//         console.log(values[j] + ' of ' + suits[i]);
+//     }
+// }
+// console.log();
+// let suits = ['Hearts', 'Clubs', 'Diamonds', 'Spades'];
+// let values = ['Ace', 'King', 'Queen', 'Jack',
+//     'Ten', 'Nine', 'Eight', 'Seven', 'Six',
+//     'Five', 'Four', 'Three', 'Two'];
+//#endregion
 
 //DOM variables
 let textArea = document.getElementById('text-area');

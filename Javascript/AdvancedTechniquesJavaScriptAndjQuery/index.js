@@ -19,8 +19,34 @@
 //3. Advanced Event Handling
 //Event parameters
 //Custom events
-//Delegation
+//*Delegation*//
+//Bind event handlers higher to DOM
+//-- Effifiency
+//-- Centralized processing
+//-- <ul> = unsorted list, <li> = list item example of list below
+{/* <ul> List header
+    <li>List item 1</li>
+    <li>List item 2</li>
+    <li>List item 3</li>
+    <li>List item 4</li>
+</ul> */}
+
+//-- .bind(), .unbind(), .live(), .die(), .delegate(), .undelegate(), .on(), .off(), .one()
+//.$('li').bind('click', function(event)
+// {    //Process click event
+// })
+//.$('li').live('click', function(event)
+// {    //Process click event
+// })
+
+//*Namespace*//
+//Event Namespace//
 //Namespace
+//-- Allows grouping of events
+//-- Provides ability to narrowly target removal of event handlers
+//-- Multiple namespaces can be included
+//-- Namespaces are not hierarchial 
+
 //*Named functions*//
 //Use a named functions as the event handler
 //-- Easy to remove

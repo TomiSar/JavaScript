@@ -1,0 +1,119 @@
+<!-- Named functions -->
+<!doctype html>
+<html language="en">
+    <head>
+        <title>Events 7 (Namespace)</title>
+        <!-- <script src="http://code.jquery.com/jquery-1.7.min.js"></script> -->
+        <!-- <script src="https://code.jquery.com/jquery-3.4.1.js" > </script> -->
+        <script src="http://code.jquery.com/jquery-1.7.js" ></script>
+        <link type="text/css" rel="stylesheet" href="EventStyles.css" />
+    </head>
+    <body>
+        <div id="WorkArea" class="clickable">
+            <h5 class="clickable">Work Area</h5>
+            <hr />
+            <input type="button" class="clickable" value="Click me" />
+            <p class="clickable">
+                Click me, too!
+            </p>
+            <p class="clickable">This is some more text with an embedded
+                <span class="clickable">clickable</span> element.
+            </p>
+        </div>
+        <div id="Messages">
+            <h5>Messages</h5>
+            <hr />
+        </div>
+    </body>
+    <script>
+        $(function()
+        {   var showEventMessage = function(options)
+            {   options = $.extend(
+                {   eventType: 'click',
+                    eventTarget: this,
+                    suffix: '<br/>'
+                }, options);
+                var message = options.eventType + ': ' +
+                             (options.eventTarget.nodeName || 'unknown') +
+                              options.suffix;
+                $('#Messages').append(message);
+            },
+            namerHandler = function(event) //Using jQuery Namer handler function 
+            {   if (!event.isPropagationStopped() &&
+                    !event.isImmediatePropagationStopped() &&
+                    !event.isDefaultPrevented())
+                    {   showEventMessage.call(this, { eventType : 'namerHandler ' + event.type })
+                        event.stopPropagation();
+                    }
+            };
+            //WorkArea --> CLICK: H5, Click me(button) --> CLICK: INPUT, Click me, too! --> CLICK: P and clickable(text) --> CLICK: SPAN
+            //Show mouse down text and double click text if double click is used for element
+            $('.clickable')
+                //New click for additional namespace test to work with. stopPropagation() logic isn't applied.
+                .on('click.test', function(event)
+                {   showEventMessage.call(this, { eventType : 'test ' + event.type });
+                })
+                .on('click.demo dblclick.demo mousedown.demo', function(event) 
+                {   if (!event.isPropagationStopped() && 
+                        !event.isImmediatePropagationStopped() && 
+                        !event.isDefaultPrevented())
+                    {   showEventMessage.call(this, { eventType: event.type });
+                        event.stopPropagation();
+
+                        if (event.type === 'mousedown')
+                            event.preventDefault();
+                    }
+                })
+                .on('mousedown.demo click.demo', function(event)
+                {   if (!event.isPropagationStopped() && 
+                        !event.isImmediatePropagationStopped() && 
+                        !event.isDefaultPrevented())
+                    {   showEventMessage.call(this, { eventType: event.type,
+                                                      suffix: '#2<br/>' });
+                    }
+                })
+                .on('selectstart.demo', function(event) //This only works with Internet Explorer (browser) 
+                {   return false;
+                })
+                .off('.demo');  //.off('click.demo'); only .demo namespace is passed and not click event type
+        });
+                //#region commented code with using shorthand methods
+                // .on('selectstart', function(event) //This only works with internet explorer browser
+                // {   return false;
+                // });
+                // .click(function(event)
+                // {   if (!event.isPropagationStopped() &&
+                //     !event.isImmediatePropagationStopped() &&
+                //     !event.isDefaultPrevented())
+                //     {   showEventMessage.call(this, { eventType: event.type })
+                //         event.stopImmediatePropagation(); //is an inbuilt method in jQuery used to stop the rest of the event handlers from being executed for the selected element
+                //     }
+                // })
+                // .on('dblclick', function(event)
+                // {   if (!event.isPropagationStopped() &&
+                //         !event.isImmediatePropagationStopped() &&
+                //         !event.isDefaultPrevented())
+                //     {   showEventMessage.call(this, { eventType: event.type });
+                //     }
+                // })
+                // .on('mousedown', function(event)
+                // {   if (!event.isPropagationStopped() &&
+                //         !event.isImmediatePropagationStopped() &&
+                //         !event.isDefaultPrevented())
+                //     {   showEventMessage.call(this, {eventType: event.type });
+                //         //event.stopPropagation(); //method stops the event from bubbling up the DOM.Any parent elements will not receive the event.
+                //         event.stopPropagation(); 
+                //         event.preventDefault();
+                //     }
+                // })
+                // .on('mousedown', function(event) //additional mousedown event handler to illustrate
+                // {   if (!event.isPropagationStopped() &&
+                //         !event.isImmediatePropagationStopped() &&
+                //         !event.isDefaultPrevented())
+                //     {   showEventMessage.call(this, { eventType: event.type,
+                //                                       suffix: '#2<br/>' });
+                //     }
+                // });
+                //#endregion
+    </script>
+</html>
