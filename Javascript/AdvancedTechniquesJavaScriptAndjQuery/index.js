@@ -21,12 +21,20 @@
 //Custom events
 //Delegation
 //Namespace
-//Named functions
+//*Named functions*//
+//Use a named functions as the event handler
+//-- Easy to remove
+//-- Can't be centralized in a library
+//-- Updating hanler function has global impact
+//Be aware of the order the event handler functions are added and removed
+//Be aware of process order assumptions
+
 //*Event handler Methods*//
 //Using jQuery Event Handlers
 //-- Change shorthand methods to use .on() method
 //-- Consolidate event handler functions
 //-- Pay attention when using .off() method 
+
 //*Outline*//
 //Advanced jQuery Event handling
 //-- Attaching events without shorthand methods
