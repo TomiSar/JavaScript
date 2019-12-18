@@ -18,7 +18,11 @@
 
 //3. Advanced Event Handling
 //Event parameters
-//Custom events
+//*Custom events*//
+//-- Create new events for DOM elements
+//-- Create events for regular objects
+//-- Initiate custom event with trigger
+
 //*Delegation*//
 //Bind event handlers higher to DOM
 //-- Effifiency
@@ -35,7 +39,8 @@
 //.$('li').bind('click', function(event)
 // {    //Process click event
 // })
-//.$('li').live('click', function(event)
+//.$('li').on('click', 'li',
+//function(event)
 // {    //Process click event
 // })
 

@@ -1,11 +1,10 @@
-<!-- Named functions -->
+<!-- Event parameters -->
 <!doctype html>
 <html language="en">
     <head>
-        <title>Advanced Event Handling (Named functions)</title>
-        <!-- Scripts source updated from jquery-1.7.min.js -> jquery-3.4.1  -->
+        <title>Advanced Event Handling (Event parameters)</title>
         <!-- <script src="http://code.jquery.com/jquery-1.7.min.js"></script> -->
-        <script src="https://code.jquery.com/jquery-3.4.1.js" > </script>
+        <script src="http://code.jquery.com/jquery-1.7.js" ></script>
         <link type="text/css" rel="stylesheet" href="EventStyles.css" />
     </head>
     <body>
@@ -46,36 +45,19 @@
                         event.stopPropagation();
                     }
             };
-            //WorkArea --> CLICK: H5, Click me(button) --> CLICK: INPUT, Click me, too! --> CLICK: P and clickable(text) --> CLICK: SPAN
-            //Show mouse down text and double click text if double click is used for element
-            $('.clickable')
-                .off('click')
-                .on('click dblclick', namerHandler)
-                .on('click dblclick mousedown', function(event) 
-                {   if (!event.isPropagationStopped() &&
-                        !event.isImmediatePropagationStopped() &&
-                        !event.isDefaultPrevented())
-                    {   showEventMessage.call(this, { eventType: event.type });
-                        event.stopPropagation();
 
-                        if (event.type === 'mousedown')
-                            event.preventDefault();
-                    }
-                })
-                .on('mousedown click', function(event) 
-                {   if (!event.isPropagationStopped() && 
-                        !event.isImmediatePropagationStopped() &&
-                        !event.isDefaultPrevented())
-                    {   showEventMessage.call(this, { eventType: event.type,
-                                                      suffix: '#2<br/>' });
-                    }
-                })
-                .on('selectstart', function(event) //This only works with Internet Explorer (browser) 
-                {   return false;
-                })
-                .off('click', namerHandler);
+            //WorkArea --> CLICK: H5, Click me(button) --> CLICK: INPUT, Click me, too! --> CLICK: P and clickable(text) --> CLICK: SPAN
+            $('.clickable')
+                .on('click', function(event)
+                {   var $this = $(this),
+                    clickCount = ($this.data('clickcount') | 0) +1; //Show clicks on Messages paragraph
+                    
+                    $this.data('clickcount', clickCount)
+                    
+                    //Show event clicks on the Messages paragraph if id is clicked
+                    showEventMessage.call(this, { eventType : '' + clickCount + ') ' + event.type })
+                });
         });
-        
                 //#region commented code with using shorthand methods
                 // .on('selectstart', function(event) //This only works with internet explorer browser
                 // {   return false;
