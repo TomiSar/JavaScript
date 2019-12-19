@@ -54,23 +54,22 @@
                 {   var $this = $(this),
                     clickCount = ($this.data('clickcount') || 0) +1;
                     
-                    $this.data('clickcount', clickCount)
+                    $this.data('clickcount', clickCount);
                     
                     showEventMessage.call(this, 
                             { eventType: '' + clickCount + ') ' + event.type })
 
                     if (clickCount === 3)
-                        $this.trigger('click3');
+                        $this.trigger('threeclicks');
                     
                     if ($this.attr('type') === 'button')
                         loadRecord();
                 })
-                .on('click3', function(event) //click3 function()
+                .on('threeclicks', function(event)
                 {   event.stopPropagation();
-                    showEventMessage.call(this, { eventType: event.type });
-                    $(this).addClass('highlight');
+                    showEventMessage.call(this, {eventType: event.type});
+                    $(this).addClass('highlight');  
                 });
-
             $(internalObject)
                 .on('recordsloaded', function(event)
                 {   showEventMessage.call(this, { eventType: event.type });

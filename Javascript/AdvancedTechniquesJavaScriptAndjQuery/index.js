@@ -1,20 +1,63 @@
 //Advanced techniques in JavaScript and jQuery -- Kevin Murray
 
 //4. Using jQuery Deferred Objects
-//Using deferred Objects
-//Creating a deferred Object
-//Dynamic pages
-//Deferred mathods
-//Negative testing
-//LoadSection function
-//Deferred Object
-//Common pattern
-//Loading all content
-//Section 1 content
-//Layout
-//Traditional Ajax Processing
-//Promise
-//Outline
+//*Using deferred Objects*//
+//*Creating a deferred Object*//
+//*Dynamic pages*//
+//*Deferred mathods*//
+//*Negative testing*//
+//*LoadSection function*//
+//*Deferred Object*//
+//*Common pattern*//
+//*Loading all content*//
+//*Section 1 content*//
+//Loading Dynamic Content
+//Using jQuery "load" method appears to work
+//-- Content loads
+//-- "Proceed" button is enabled with a callback function
+
+//*Layout*//
+//Loading dynamic content
+//Requirements:
+//-- Load into three <DIV>elements- asynchronously
+//-- When all content is loaded, enable another element
+//-- Only load content when user clicks the "Load" button
+
+//*Traditional Ajax Processing*//
+//$.get('somefile.html', function(result)
+//{     //This is a callback function
+//      //Process the result - and set some
+//      //Flag to indicate completion
+//}     
+//-- Few developers capture the result of the $.get function call
+//-- The callback is used to trigger further processing upon completion
+//-- Gets problematic if multiple processes need to be executed
+
+//*Promise*//
+//jQuery Deferred processing
+//Implements the JavasScript promise
+//AJAX calls
+//-- Open a connection to an external source
+//-- Begin transfer of the resource 
+//-- Upon completion, execute success or failure callbacks
+//-- Resolve or reject a promise
+//Many developers just pass success or failure callback functions
+//The returned promise is mostly ignored
+
+//*Outline*//
+//jQuery Deferred Object
+//Grouping provides an alternate to callbacks for asychronous processing - Deferred
+//Deferred allows:
+//-- Grouping multiple asynchronous processes
+//-- Attaching multiple success and failure handlers
+//-- Postpone logic flow until all asynchronous prosesses complete - in any order
+//-- Integration of AJAX and custom functions into asynchronous processing
+
+//*Introduction*//
+//Traditional JavaScript functions
+//-- Positional parameters
+//-- Handling default values
+//-- Object parameters
 
 //3. Advanced Event Handling
 //*Summary*//
