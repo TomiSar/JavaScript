@@ -17,7 +17,19 @@
 //Outline
 
 //3. Advanced Event Handling
-//Event parameters
+//*Summary*//
+//-- .off() method can remove more than we attached
+//-- Event handlers can be associated with specific eventm namespaces for easier managemenet and removal
+//-- Delegation is a good way to reduce number of attached event handlers
+//-- Custom events are processed in the same manner as system events 
+//-- Additional data can be passed to an event handler for either a custom event or system event
+
+//*Event parameters*//
+//-- Additional data can be passed through evnet handler functions
+//-- Include data in jQuery .trigger() method
+//-- Include data in jQuery .on() method
+//-- Parameter type should be array or object
+
 //*Custom events*//
 //-- Create new events for DOM elements
 //-- Create events for regular objects

@@ -1,9 +1,8 @@
-<!-- Event parameters -->
+<!-- Event prameters -->
 <!doctype html>
 <html language="en">
     <head>
-        <title>Advanced Event Handling (Event parameters)</title>
-        <!-- <script src="http://code.jquery.com/jquery-1.7.min.js"></script> -->
+        <title>Advanced Event Handling  (Event parameters)</title>
         <script src="http://code.jquery.com/jquery-1.7.js" ></script>
         <link type="text/css" rel="stylesheet" href="EventStyles.css" />
     </head>
@@ -33,68 +32,56 @@
                     suffix: '<br/>'
                 }, options);
                 var message = options.eventType + ': ' +
-                             (options.eventTarget.nodeName || 'unknown') +
+                             (options.eventTarget.nodeName || 'unknown') + //recordsloaded: unknown
                               options.suffix;
                 $('#Messages').append(message);
             },
-            namerHandler = function(event) //Using jQuery Namer handler function 
-            {   if (!event.isPropagationStopped() &&
-                    !event.isImmediatePropagationStopped() &&
-                    !event.isDefaultPrevented())
-                    {   showEventMessage.call(this, { eventType : 'namerHandler ' + event.type })
-                        event.stopPropagation();
-                    }
+            internalObject = { records: [], maxCount: 5}, //maxCount (how many records to load)
+            notifyObject = $({ nodeName: 'INTERNAL' }),
+            loadRecord = function()
+            {   var id = internalObject.records.length;
+                if (id < internalObject.maxCount)
+                {   internalObject.records.push(
+                    {   'description': 'Record id ' + id,
+                        value: Math.floor(Math.random() * 5000)
+                    });
+                    setTimeout(loadRecord, Math.floor(Math.random() * 1000));
+                }
+                else
+                    $(notifyObject).trigger('recordsloaded', internalObject); //$(internalObject).trigger('recordsloaded');
             };
-
-            //WorkArea --> CLICK: H5, Click me(button) --> CLICK: INPUT, Click me, too! --> CLICK: P and clickable(text) --> CLICK: SPAN
             $('.clickable')
-                .on('click', function(event)
+                .on('click', internalObject, function(event)
                 {   var $this = $(this),
-                    clickCount = ($this.data('clickcount') | 0) +1; //Show clicks on Messages paragraph
+                    clickCount = ($this.data('clickcount') || 0) +1;
                     
                     $this.data('clickcount', clickCount)
                     
-                    //Show event clicks on the Messages paragraph if id is clicked
-                    showEventMessage.call(this, { eventType : '' + clickCount + ') ' + event.type })
+                    showEventMessage.call(this, 
+                            { eventType: '' + clickCount + ') ' + event.type })
+
+                    // if (clickCount === 3)
+                    //     $this.trigger('click3');
+                    
+                    if ($this.attr('type') === 'button')
+                    {   var theObject = event.data || { records: [] };
+                        $('#Messages').append('Record count: ' + theObject.records.length + '<br/>');
+                        loadRecord();
+                    }
                 });
+                // .on('click3', function(event) //click3 function()
+                // {   event.stopPropagation();
+                //     showEventMessage.call(this, { eventType: event.type });
+                //     $(this).addClass('highlight');
+                // });
+            $(notifyObject)
+                .on('recordsloaded', function(event, theObject)
+                {   showEventMessage.call(this, { eventType: event.type });
+                    $.each(theObject.records, function()
+                    {   $('#Messages').append(' -- ' + this.description + ': ' + this.value + '<br/>');
+
+                    });
+                });   
         });
-                //#region commented code with using shorthand methods
-                // .on('selectstart', function(event) //This only works with internet explorer browser
-                // {   return false;
-                // });
-                // .click(function(event)
-                // {   if (!event.isPropagationStopped() &&
-                //     !event.isImmediatePropagationStopped() &&
-                //     !event.isDefaultPrevented())
-                //     {   showEventMessage.call(this, { eventType: event.type })
-                //         event.stopImmediatePropagation(); //is an inbuilt method in jQuery used to stop the rest of the event handlers from being executed for the selected element
-                //     }
-                // })
-                // .on('dblclick', function(event)
-                // {   if (!event.isPropagationStopped() &&
-                //         !event.isImmediatePropagationStopped() &&
-                //         !event.isDefaultPrevented())
-                //     {   showEventMessage.call(this, { eventType: event.type });
-                //     }
-                // })
-                // .on('mousedown', function(event)
-                // {   if (!event.isPropagationStopped() &&
-                //         !event.isImmediatePropagationStopped() &&
-                //         !event.isDefaultPrevented())
-                //     {   showEventMessage.call(this, {eventType: event.type });
-                //         //event.stopPropagation(); //method stops the event from bubbling up the DOM.Any parent elements will not receive the event.
-                //         event.stopPropagation(); 
-                //         event.preventDefault();
-                //     }
-                // })
-                // .on('mousedown', function(event) //additional mousedown event handler to illustrate
-                // {   if (!event.isPropagationStopped() &&
-                //         !event.isImmediatePropagationStopped() &&
-                //         !event.isDefaultPrevented())
-                //     {   showEventMessage.call(this, { eventType: event.type,
-                //                                       suffix: '#2<br/>' });
-                //     }
-                // });
-                //#endregion
     </script>
 </html>
