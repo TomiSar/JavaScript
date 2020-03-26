@@ -8,7 +8,6 @@ const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 3000;
-const bookRouter = express.Router();
 
 app.use(morgan('tiny'));
 app.use(express.static(path.join(__dirname, '/public')));
@@ -18,72 +17,15 @@ app.use('/js', express.static(path.join(__dirname, '/node_modules/jquery/dist'))
 app.set('views', './src/views');
 app.set('view engine', 'ejs'); // app.set('view engine', 'pug');
 
-const books = [
-  {
-    title: 'Sinuhe Egyptiläinen',
-    genre: 'Fiction',
-    author: 'Mika Waltari',
-    read: false
-  },
-  {
-    title: 'Tuulikaappimaa',
-    genre: 'Comedy Fiction',
-    author: 'Jari Tervo',
-    read: false
-  },
-  {
-    title: 'War and Peace',
-    genre: 'Historical Fiction',
-    author: 'Lev Nikolayevich Tolstoy',
-    read: false
-  },
-  {
-    title: 'A prisoner of Azkaban',
-    genre: 'Fantasy',
-    author: 'JK Rowling',
-    read: false
-  },
-  {
-    title: 'The wind in the willows',
-    genre: 'Fantasy',
-    author: 'Kenneth Grahame',
-    read: false
-  },
-  {
-    title: 'Life on the misses',
-    genre: 'History',
-    author: 'Mark Twain',
-    read: false
-  },
-  {
-    title: 'Childhood',
-    genre: 'Biography',
-    author: 'Lev Nikolayevich Tolstoy',
-    read: false
-  }];
+const nav = [
+  { link: '/books', title: 'Book' },
+  { link: '/authors', title: 'Author' }
+];
 
-bookRouter.route('/').post()
-  .get((req, res) => {
-    res.render('books',
-      {
-        nav: [{ link: '/books', title: 'Books' },
-          { link: '/authors', title: 'Authors' }],
-        title: 'Library',
-        books
-      });
-  });
-
-bookRouter.route('/single').post()
-  .get((req, res) => {
-    res.send('Hello single book');
-  });
+const bookRouter = require('./src/routes/bookRoutes')(nav);
 
 app.use('/books', bookRouter);
-
-// install eslint --> npm i -D eslint eslint-config-airbnb-base eslint-plugin-import
-// res.sendFile(path.join(`${__dirname}/views/index.html`));
-// res.render('index', { list: ['a', 'b'], title: 'Library' });
-app.get('/', (_req, res) => {
+app.get('/', (req, res) => {
   res.render(
     'index',
     {
@@ -94,6 +36,9 @@ app.get('/', (_req, res) => {
   );
 });
 
+// install eslint --> npm i -D eslint eslint-config-airbnb-base eslint-plugin-import
+// res.sendFile(path.join(`${__dirname}/views/index.html`));
+// res.render('index', { list: ['a', 'b'], title: 'Library' });
 // console.log(`listening on port  ${chalk.green('3000')}`);
 // Install eslint: npm init -y, npm i -D eslint eslint-config-airbnb-base eslint-plugin-import
 // set DEBUG = * &  node app.js --> localhost:3000 FIX --> .\node_modules\.bin\eslint app.js --fix
