@@ -20,8 +20,15 @@ app.set('view engine', 'ejs');
 // install eslint --> npm i -D eslint eslint-config-airbnb-base eslint-plugin-import
 // res.sendFile(path.join(`${__dirname}/views/index.html`));
 app.get('/', (_req, res) => {
-  res.render('index', { list: ['a', 'b'], title: 'Library' });
-  // res.render('index', { list: ['a', 'b'] });
+  // res.render('index', { list: ['a', 'b'], title: 'Library' });
+  res.render(
+    'index',
+    {
+      nav: [{ link: '/books', title: 'Books' },
+        { link: '/authors', title: 'Authors' }],
+      title: 'Library'
+    }
+  );
 });
 
 // console.log(`listening on port  ${chalk.green('3000')}`);
